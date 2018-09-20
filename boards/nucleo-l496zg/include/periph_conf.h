@@ -125,11 +125,27 @@ static const uart_conf_t uart_config[] = {
         .dma_stream = 5,
         .dma_chan   = 4
 #endif
+    },
+    {
+        .dev        = UART5,
+        .rcc_mask   = RCC_APB1ENR1_UART5EN,
+        .rx_pin     = GPIO_PIN(PORT_D, 2),
+        .tx_pin     = GPIO_PIN(PORT_C, 12),
+        .rx_af      = GPIO_AF8,
+        .tx_af      = GPIO_AF8,
+        .bus        = APB1,
+        .irqn       = UART5_IRQn,
+#ifdef UART_USE_DMA
+        // TODO
+#endif
     }
 };
 
 #define UART_0_ISR          (isr_usart3)
 #define UART_0_DMA_ISR      (isr_dma1_stream5)
+
+#define UART_1_ISR          (isr_uart5)
+// TODO #define UART_0_DMA_ISR      (isr_dma1_stream5)
 
 #define UART_NUMOF          (sizeof(uart_config) / sizeof(uart_config[0]))
 /** @} */
