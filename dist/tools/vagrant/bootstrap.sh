@@ -5,7 +5,7 @@ apt-get install -y pcregrep libpcre3 python3 git gcc-arm-none-eabi gcc-msp430 un
     qemu-system-x86 g++-multilib gcc-multilib build-essential gcc-avr binutils-avr avr-libc \
     avrdude doxygen cppcheck python-setuptools libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev \
     libftdipp1-dev libftdipp1-2v5 libhidapi-dev libhidapi-hidraw0 libhidapi-libusb0 make cmake \
-    autotools-dev autoconf pkg-config jimsh libtool valgrind openocd python-serial python3-serial
+    autotools-dev autoconf pkg-config jimsh libtool valgrind python-serial python3-serial
 
 # give permissions for serial ports
 adduser vagrant dialout
@@ -28,3 +28,12 @@ udevadm control --reload-rules ; udevadm trigger
 
 # cleanup
 apt-get -y autoremove
+
+# compile openocd from source
+cd
+git clone http://repo.or.cz/openocd.git
+cd openocd
+./bootstrap
+./configure
+make
+sudo make install
