@@ -29,6 +29,7 @@ udevadm control --reload-rules ; udevadm trigger
 # cleanup
 apt-get -y autoremove
 
+
 # compile openocd from source
 #cd
 #git clone http://repo.or.cz/openocd.git
