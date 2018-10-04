@@ -26,6 +26,9 @@ fi
 cp -f RIOT/dist/tools/vagrant/udev_rules/*.rules /etc/udev/rules.d/
 udevadm control --reload-rules ; udevadm trigger
 
+# cleanup
+apt-get -y autoremove
+
 # compile openocd from source
 #cd
 #git clone http://repo.or.cz/openocd.git
@@ -34,7 +37,3 @@ udevadm control --reload-rules ; udevadm trigger
 #./configure
 #make
 #sudo make install
-
-# cleanup
-apt-get -y autoremove
-
