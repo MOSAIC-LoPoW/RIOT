@@ -30,10 +30,10 @@ udevadm control --reload-rules ; udevadm trigger
 apt-get -y autoremove
 
 # compile openocd from source
-cd
-git clone http://repo.or.cz/openocd.git
-cd openocd
-./bootstrap
-./configure
-make
-sudo make install
+#cd
+#git clone http://repo.or.cz/openocd.git
+#cd openocd
+#./bootstrap
+#./configure
+#make
+#sudo make install

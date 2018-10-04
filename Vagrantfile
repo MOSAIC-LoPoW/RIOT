@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
     vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
 
     # additional USB passthrough entries
-    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'nucleo', '--vendorid', '0483', '--productid', '374b']
+    #vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'nucleo', '--vendorid', '0483', '--productid', '374b']
   end
 
   config.vm.synced_folder RIOTBASE, "/home/vagrant/RIOT"
