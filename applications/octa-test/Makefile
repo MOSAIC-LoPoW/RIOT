@@ -6,6 +6,7 @@ BOARD ?= octa
 
 USEMODULE += xtimer
 USEMODULE += lsm303dlhc
+USEMODULE += sht3x
 
 # This has to be the absolute path to the RIOT base directory:
 RIOTBASE ?= $(CURDIR)/../..

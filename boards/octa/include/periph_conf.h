@@ -111,16 +111,21 @@ static const timer_conf_t timer_config[] = {
  * @name    UART configuration
  * @{
  */
+#define OCTA_FTDI_UART      1
+
 static const uart_conf_t uart_config[] = {
     {
         .dev        = USART3,
         .rcc_mask   = RCC_APB1ENR1_USART3EN,
-        //UART to P3 connector (default)
-        //.rx_pin     = GPIO_PIN(PORT_D, 9),
-        //.tx_pin     = GPIO_PIN(PORT_D, 8),
+#if defined OCTA_FTDI_UART &&  OCTA_FTDI_UART
         //UART to octa-ftdi
         .rx_pin     = GPIO_PIN(PORT_C, 5),
         .tx_pin     = GPIO_PIN(PORT_C, 4),
+#else  
+        //UART to P3 connector (default)
+        .rx_pin     = GPIO_PIN(PORT_D, 9),
+        .tx_pin     = GPIO_PIN(PORT_D, 8),
+#endif
         .rx_af      = GPIO_AF7,
         .tx_af      = GPIO_AF7,
         .bus        = APB1,
