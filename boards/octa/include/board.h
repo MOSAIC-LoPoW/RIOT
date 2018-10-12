@@ -1,26 +1,12 @@
-/*
- * Copyright (C) 2017 Inria
- *               2017 OTAKeys
- *               2018 Freie Universität Berlin
- *
- * This file is subject to the terms and conditions of the GNU Lesser
- * General Public License v2.1. See the file LICENSE in the top level
- * directory for more details.
- */
-
 /**
- * @defgroup    boards_common_nucleo144 STM32 Nucleo-144
- * @ingroup     boards
- * @brief       Support for STM32 Nucleo-144 boards
+ * 
+ * 
+ * @brief       Support for OCTA board
  * @{
  *
  * @file
  * @brief       Common pin definitions and board configuration options
  *
- * @author      Alexandre Abadie <alexandre.abadie@inria.fr>
- * @author      Vincent Dupont <vincent@otakeys.com>
- * @author      Sebastian Meiling <s@mlng.net>
- * @author      Hauke Petersen <hauke.petersen@fu-berlin.de>
  */
 
 #ifndef BOARD_H
