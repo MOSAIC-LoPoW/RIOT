@@ -5,4 +5,4 @@
 - Firmware:
     - `(sudo) make all flash term`
     - accelerometer data from LSM sensor should appear in the serial monitor
-    - RGB led will blin R->G->B
+    - RGB led will blink R->G->B
