@@ -43,6 +43,7 @@ int main(void)
     printf("\n+--------Starting Measurements--------+\n");
 
     lsm303dlhc_3d_data_t acc_value;
+    lsm303dlhc_3d_data_t mag_value;
     int16_t temp;
     int16_t hum;
 
@@ -55,9 +56,17 @@ int main(void)
         else {
             puts("\nFailed reading accelerometer values\n");
         }
+        if (lsm303dlhc_read_mag(&lsm_dev, &mag_value) == 0) {
+            printf("Magnetometer x: %i y: %i z: %i\n", mag_value.x_axis,
+                                                       mag_value.y_axis,
+                                                       mag_value.z_axis);
+        }
+        else {
+            puts("\nFailed reading magnetometer values\n");
+        }
         
         if (sht3x_read(&sht_dev, &temp, &hum) == SHT3X_OK) {
-            printf("Temperature [°C]: %d.%d\n"
+            printf("Temperature [deg C]: %d.%d\n"
                    "Relative Humidity [%%]: %d.%d\n"
                    "+-------------------------------------+\n",
                    temp / 100, temp % 100,

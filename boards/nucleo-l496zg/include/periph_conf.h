@@ -115,12 +115,8 @@ static const uart_conf_t uart_config[] = {
     {
         .dev        = USART3,
         .rcc_mask   = RCC_APB1ENR1_USART3EN,
-        //UART to P3 connector (default)
-        //.rx_pin     = GPIO_PIN(PORT_D, 9),
-        //.tx_pin     = GPIO_PIN(PORT_D, 8),
-        //UART to octa-ftdi
-        .rx_pin     = GPIO_PIN(PORT_C, 5),
-        .tx_pin     = GPIO_PIN(PORT_C, 4),
+        .rx_pin     = GPIO_PIN(PORT_D, 9),
+        .tx_pin     = GPIO_PIN(PORT_D, 8),
         .rx_af      = GPIO_AF7,
         .tx_af      = GPIO_AF7,
         .bus        = APB1,
